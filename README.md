@@ -14,33 +14,37 @@ Claude AI를 활용하여 일반적인 회고 작성을 넘어선 **깊이 있�
 ### Option 1: Notion 연동 (자동화)
 일일 메모에서 주간 회고까지 Notion 데이터를 활용한 완전 자동화
 
-1. `config.md`에서 Notion 데이터베이스 ID 설정
+1. `docs/setup.md`에서 Notion 데이터베이스 ID 설정
 2. Claude Code에서 Notion MCP 연동
 3. 자동으로 메모 수집 → 대화형 회고 → Notion 업로드
 
 ### Option 2: 독립 사용 (범용)
 Claude와 대화만으로 어디서든 회고 작성 가능
 
-1. `weekly/template.md` 또는 `monthly/template.md` 참고하여 회고 주제 선택
-2. `weekly/prompts.md` 또는 `monthly/prompts.md`의 질문 패턴으로 Claude와 대화
+1. `templates/weekly/template.md` 또는 `templates/monthly/template.md` 참고하여 회고 주제 선택
+2. `templates/weekly/prompts.md` 또는 `templates/monthly/prompts.md`의 질문 패턴으로 Claude와 대화
 3. 결과를 마크다운으로 복사하여 원하는 곳에 저장
 
 ## 📁 파일 구조
 
 ```
 hoego/
-├── README.md         # 프로젝트 소개 (현재 파일)
-├── setup.md          # 초기 설정 가이드 (Notion 연동)
-├── guide.md          # 상세 사용 가이드
-├── config.md         # Notion 설정 (연동 시에만 필요)
-├── settings.json     # 회고 시스템 설정
-├── backup.md         # 중단된 회고 임시 저장
-├── weekly/           # 주간 회고 전용
-│   ├── template.md   # 주간 회고 템플릿
-│   └── prompts.md    # 주간 회고용 질문 패턴
-└── monthly/          # 월간 회고 전용
-    ├── template.md   # 월간 회고 템플릿
-    └── prompts.md    # 월간 회고용 질문 패턴
+├── README.md            # 프로젝트 소개 (현재 파일)
+├── guide.md             # 상세 사용 가이드
+├── settings.json        # 회고 시스템 설정
+├── backup.md            # 중단된 회고 임시 저장
+├── docs/
+│   └── setup.md         # 초기 설정 가이드 (Notion 연동)
+├── templates/           # 회고 템플릿들
+│   ├── weekly/          # 주간 회고 전용
+│   │   ├── template.md  # 주간 회고 템플릿
+│   │   └── prompts.md   # 주간 회고용 질문 패턴
+│   └── monthly/         # 월간 회고 전용
+│       ├── template.md  # 월간 회고 템플릿
+│       └── prompts.md   # 월간 회고용 질문 패턴
+└── commands/            # 슬래시 커맨드들
+    ├── 주간회고.md
+    └── 월간회고.md
 ```
 
 ## 💡 왜 Claude와 함께 회고를?
@@ -100,12 +104,12 @@ Claude Code에서 슬래시 커맨드로 간편하게:
 
 또는 직접 요청:
 ```
-"이번 주 회고 작성하고 싶어요. weekly/prompts.md 패턴으로 시작해주세요."
-"이번 달 회고 작성하고 싶어요. monthly/prompts.md 패턴으로 시작해주세요."
+"이번 주 회고 작성하고 싶어요. templates/weekly/prompts.md 패턴으로 시작해주세요."
+"이번 달 회고 작성하고 싶어요. templates/monthly/prompts.md 패턴으로 시작해주세요."
 ```
 
 ### ⚙️ Notion과 연결해서 쓰기
-1. `setup.md` 보고 MCP 설정
+1. `docs/setup.md` 보고 MCP 설정
 2. `settings.json`에서 데이터베이스 ID 설정  
 3. "이번 주 회고 작성해줘" → 자동으로 메모 수집부터 시작
 
