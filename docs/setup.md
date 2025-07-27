@@ -37,9 +37,11 @@ cp settings.example.json settings.json
   - 메모가 없으면: 일반적인 메모리 리콜로 진행 (전혀 문제없음)
   - 어떤 형태든 상관없음: 긴 글, 짧은 메모, 감정, 링크, 생각 조각 등 자유롭게
 
-#### 독립 사용
+#### 독립 사용 (권장)
 - 두 ID를 모두 빈 문자열("")로 설정 시 독립 사용 모드
 - Notion 없이도 Claude와 대화만으로 회고 작성 가능
+- 완성된 회고는 backup.md에 자동 저장되어 필요시 수동으로 Notion에 복사 가능
+- 토큰 효율적이고 빠른 처리 가능
 
 ### 2. 문장 정리 기능
 - **"off"**: 사용자 말 그대로 보존
@@ -78,7 +80,7 @@ Notion 연동을 원하는 경우에만 아래 설정을 진행하세요.
 
 ### 2. Claude Code MCP 설정
 
-Claude Code에서 Notion MCP를 사용하려면 `claude_desktop_config.json`에 다음과 같이 설정하세요:
+Claude Code에서 Notion MCP를 사용하려면 `~/.claude.json` 파일의 `mcpServers` 섹션에 다음과 같이 설정하세요:
 
 ```json
 {
@@ -94,7 +96,10 @@ Claude Code에서 Notion MCP를 사용하려면 `claude_desktop_config.json`에 
 }
 ```
 
-**중요**: `your_notion_api_token_here`를 실제 Notion API 토큰으로 교체하세요.
+**중요**: 
+- `your_notion_api_token_here`를 실제 Notion API 토큰으로 교체하세요
+- `~/.claude.json` 파일에 이미 다른 설정이 있다면 `mcpServers` 부분만 추가/수정하세요
+- Claude Code 재시작 후 적용됩니다
 
 ### 3. 페이지 연결
 
