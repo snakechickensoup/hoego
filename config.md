@@ -1,13 +1,19 @@
 # 회고 시스템 설정 ⚙️
 
-## 🎯 설정 파일 위치
+## 🎯 설정 파일 설정
 
+### 1. 설정 파일 생성
+```bash
+cp settings.example.json settings.json
+```
+
+### 2. 설정 파일 수정
 회고 시스템의 모든 설정은 `settings.json` 파일에서 관리됩니다.
 
 ```json
 {
-  "notion_review_database_id": "30391af6-a094-479b-8e92-b547ce661c79",
-  "notion_daily_memo_database_id": "21eb5a0ca99680f9b9a8f149c1604448", 
+  "notion_review_database_id": "your-review-database-id-here",
+  "notion_daily_memo_database_id": "your-daily-memo-database-id-here", 
   "sentence_cleanup": "normal"
 }
 ```
@@ -29,7 +35,7 @@
 
 ## 🛠️ 설정 변경 방법
 
-1. `review/settings.json` 파일 수정
+1. `settings.json` 파일 수정
 2. 회고 시작 시 자동으로 적용
 3. 실시간 변경도 가능: "문장 정리를 light로 바꿔줘"
 
@@ -42,4 +48,4 @@ https://www.notion.so/{DATABASE_ID}?v=...
 
 ## MCP 설정
 
-Notion MCP 설정은 `../setup.md`를 참조하세요.
+Notion MCP 설정은 `setup.md`를 참조하세요.

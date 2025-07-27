@@ -11,16 +11,15 @@ Notion 연동 또는 독립적 사용이 모두 가능합니다.
 ## 프로젝트 구조
 
 - `setup.md` - Notion 연동과 Claude Code MCP 설정을 위한 초기 설정 가이드
-- `hoego/` 폴더 - 회고 시스템 핵심 파일들
-  - `guide.md` - Notion 기반 회고 작성 프로세스 가이드
-  - `settings.json` - 회고 시스템 설정 (Notion DB ID, 문장 정리 옵션)
-  - `weekly/` - 주간 회고 전용 폴더
-    - `template.md` - 주간 회고 템플릿
-    - `prompts.md` - 주간 회고용 질문 패턴
-  - `monthly/` - 월간 회고 전용 폴더
-    - `template.md` - 월간 회고 템플릿
-    - `prompts.md` - 월간 회고용 질문 패턴
-  - `backup/` - 백업 파일 저장소
+- `guide.md` - Notion 기반 회고 작성 프로세스 가이드
+- `settings.json` - 회고 시스템 설정 (Notion DB ID, 문장 정리 옵션)
+- `weekly/` - 주간 회고 전용 폴더
+  - `template.md` - 주간 회고 템플릿
+  - `prompts.md` - 주간 회고용 질문 패턴
+- `monthly/` - 월간 회고 전용 폴더
+  - `template.md` - 월간 회고 템플릿
+  - `prompts.md` - 월간 회고용 질문 패턴
+- `backup.md` - 백업 파일 저장소
 
 ## Notion 연동 설정
 
@@ -33,7 +32,7 @@ Notion 연동 또는 독립적 사용이 모두 가능합니다.
 ## Claude 작업 가이드라인
 
 ### 설정 파일 확인
-- 회고 작업 시 `hoego/settings.json` 파일을 먼저 읽어서 설정 확인
+- 회고 작업 시 `settings.json` 파일을 먼저 읽어서 설정 확인
 - `sentence_cleanup` 설정에 따라 문장 정리 수준 조절:
   - "off": 사용자 원문 그대로 보존
   - "light": 핵심만 간단히 정리  
@@ -48,14 +47,14 @@ Notion 연동 또는 독립적 사용이 모두 가능합니다.
 ### 회고 작성 프로세스 (필수 준수)
 
 #### 슬래시 커맨드 사용 (권장)
-- `/주간회고`: 주간 회고 자동 시작 (hoego/weekly/ 폴더 사용)
-- `/월간회고`: 월간 회고 자동 시작 (hoego/monthly/ 폴더 사용)
+- `/주간회고`: 주간 회고 자동 시작 (weekly/ 폴더 사용)
+- `/월간회고`: 월간 회고 자동 시작 (monthly/ 폴더 사용)
 
 #### 수동 진행 시 프로세스
 1. **시작**: backup.md 자동 확인 → 있으면 이어서 할지 물어보기
 2. **메모리 리콜**: 해당 회고 타입의 prompts.md 패턴 사용
-   - 주간: hoego/weekly/prompts.md (전체 주를 한번에, 요일별 분할 금지)
-   - 월간: hoego/monthly/prompts.md (한 달 전체 흐름과 패턴 중심)
+   - 주간: weekly/prompts.md (전체 주를 한번에, 요일별 분할 금지)
+   - 월간: monthly/prompts.md (한 달 전체 흐름과 패턴 중심)
 3. **체계적 진행**: 해당 회고 타입의 template.md 구조 정확히 따르기
 4. **완성**: 해당 template.md 형식으로 최종 문서 작성
 

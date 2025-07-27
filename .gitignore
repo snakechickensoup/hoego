@@ -2,5 +2,9 @@
 .env
 node_modules/
 
+# 개인 설정 파일
+settings.json
+
+# 백업 파일들
 backup/
 backup.md
